@@ -71,7 +71,7 @@ void show_system(struct gfx_context_t *ctxt, system_t *system) {
     // coord de centre de la planète
     vec2 center = vec2_mul(scalar, system->planets[i].pos);
     // rayon de la planète
-    double rayon = system->planets[i].rayon /coef  * 100000;
+    double rayon = (system->planets[i].rayon /coef  * 100000) * 7;
 
     coordinates screen_pos = vec2_to_coordinates(center, SCREEN_WIDTH, SCREEN_HEIGHT);
     

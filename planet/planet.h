@@ -5,7 +5,7 @@
 #define _PLANET_H_
 
 
-#define SCREEN_WIDTH 1920
+#define SCREEN_WIDTH 1000
 #define SCREEN_HEIGHT 1000
 
 #define NB_PLANET 6
@@ -51,7 +51,6 @@
 
 
 // colors 
-
 #define COLOR_MERCURE 0x908a8a
 #define COLOR_VENUS 0xe7e7e5
 #define COLOR_TERRE 0x545b78
