@@ -10,10 +10,6 @@ make && ./main
 
 ## Run tests
 
-```sh
-make test 
-make run_test
-```
 
 ## Author
 
