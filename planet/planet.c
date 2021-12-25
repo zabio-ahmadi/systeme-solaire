@@ -13,19 +13,19 @@
  * @param mass 
  * @param rayon 
  * @param excentricity 
- * @param demi_grand_axe 
+ * @param perihelie 
  * @param color 
  * @return planet_t 
  */
-planet_t create_planet(double mass,double rayon, double excentricity, double demi_grand_axe, uint32_t color){
+planet_t create_planet(double mass,double rayon, double excentricity, double perihelie, uint32_t color){
 
   planet_t planet;
   planet.mass = mass;
   planet.rayon = rayon;
-  planet.pos = vec2_create(demi_grand_axe * (1 - excentricity), 0); 
+  planet.pos = vec2_create(perihelie * (1 - excentricity), 0); 
   planet.prec_pos =  vec2_create_zero();
   planet.planet_excentricity = excentricity;
-  planet.planet_demi_grand_ax = demi_grand_axe;
+  planet.perihelie = perihelie;
   planet.color = color;
 
   return planet;
@@ -65,7 +65,7 @@ void show_system(struct gfx_context_t *ctxt, system_t *system) {
   for (uint32_t i = 0; i < system->nb_planets; i++){
      
     // calcule la coef de proportion 
-    long coef = system->planets[system->nb_planets-1].planet_demi_grand_ax;
+    long coef = system->planets[system->nb_planets-1].perihelie;
     double scalar = 1.0/coef;
 
     // coord de centre de la planète
@@ -91,7 +91,7 @@ void show_system(struct gfx_context_t *ctxt, system_t *system) {
 vec2 calcul_de_vp(planet_t planet, system_t *system) {
 
   vec2 vector_normal = vec2_create(-planet.pos.y, planet.pos.x);
-  double scalar = sqrt((G * system->star.mass * (1 + planet.planet_excentricity)) / (planet.planet_demi_grand_ax * (1 - planet.planet_excentricity)));
+  double scalar = sqrt((G * system->star.mass * (1 + planet.planet_excentricity)) / (planet.perihelie * (1 - planet.planet_excentricity)));
   vec2 v_unitaire_vp = vec2_normalize(vector_normal);
   vec2 vp = vec2_mul(scalar, v_unitaire_vp);
   return vp;

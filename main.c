@@ -21,12 +21,12 @@ int main()
     system_t system = create_system(NB_PLANET);
     system.planets = malloc(system.nb_planets * sizeof(planet_t));
 
-    system.planets[0] = create_planet(M_MERCURE,R_MERCURE,EXCENTRICITE_MERCURE,DEMI_G_AXE_MERCURE, COLOR_MERCURE);
-    system.planets[1] = create_planet(M_VENUS,R_VENUS,EXCENTRICITE_VENUS,DEMI_G_AXE_VENUS, COLOR_VENUS);
-    system.planets[2] = create_planet(M_TERRE,R_TERRE,EXCENTRICITE_TERRE,DEMI_G_AXE_TERRE, COLOR_TERRE);
-    system.planets[3] = create_planet(M_MARS,R_MARS,EXCENTRICITE_MARS,DEMI_G_AXE_MARS, COLOR_MARS);  
-    system.planets[4] = create_planet(M_JUPITER,R_JUPITER,EXCENTRICITE_JUPITER,DEMI_G_AXE_JUPITER, COLOR_JUPITER);  
-    system.planets[5] = create_planet(M_SATURNE,R_SATURNE,EXCENTRICITE_SATURNE,DEMI_G_AXE_SATURNE, COLOR_SATURNE);  
+    system.planets[0] = create_planet(M_MERCURE,R_MERCURE,EXCENTRICITE_MERCURE,PERIHELIE_MERCURE, COLOR_MERCURE);
+    system.planets[1] = create_planet(M_VENUS,R_VENUS,EXCENTRICITE_VENUS,PERIHELIE_VENUS, COLOR_VENUS);
+    system.planets[2] = create_planet(M_TERRE,R_TERRE,EXCENTRICITE_TERRE,PERIHELIE_TERRE, COLOR_TERRE);
+    system.planets[3] = create_planet(M_MARS,R_MARS,EXCENTRICITE_MARS,PERIHELIE_MARS, COLOR_MARS);  
+    system.planets[4] = create_planet(M_JUPITER,R_JUPITER,EXCENTRICITE_JUPITER,PERIHELIE_JUPITER, COLOR_JUPITER);  
+    system.planets[5] = create_planet(M_SATURNE,R_SATURNE,EXCENTRICITE_SATURNE,PERIHELIE_SATURNE, COLOR_SATURNE);  
     
 
     // calcul la position initial à partir de delta_t 

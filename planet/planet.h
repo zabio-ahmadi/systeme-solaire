@@ -33,13 +33,13 @@
 #define R_SATURNE 5.8232e7
 
 
-// demi grande axe en mètre
-#define DEMI_G_AXE_MERCURE 5.7909050e10  
-#define DEMI_G_AXE_VENUS 1.08209e11
-#define DEMI_G_AXE_TERRE 1.49596e11
-#define DEMI_G_AXE_MARS 2.27923e11
-#define DEMI_G_AXE_JUPITER 7.78570e11
-#define DEMI_G_AXE_SATURNE 1.433529e12
+// périhélie
+#define PERIHELIE_MERCURE 4.6001009e10  
+#define PERIHELIE_VENUS 1.0747617e11
+#define PERIHELIE_TERRE 1.47098291e11
+#define PERIHELIE_MARS 2.06655215e11
+#define PERIHELIE_JUPITER 7.40679835e11
+#define PERIHELIE_SATURNE 1.349823615e12
 
 //EXCENTRICITE
 #define EXCENTRICITE_MERCURE 0.2056
@@ -66,7 +66,7 @@ typedef struct _planet {
   double rayon;
   uint32_t color; 
   double planet_excentricity;
-  double planet_demi_grand_ax;
+  double perihelie;
   vec2 pos;      // x(t)
   vec2 prec_pos; // x(t - dt)
 } planet_t;
@@ -80,7 +80,7 @@ typedef struct _system {
 // Those function are not mandatory to implement,
 // it's rather a hint of what you should have.
 
-planet_t create_planet(double mass,double rayon, double excentricity, double demi_grand_axe, uint32_t color);
+planet_t create_planet(double mass,double rayon, double excentricity, double perihelie, uint32_t color);
 
 system_t create_system(int32_t nb_planets);
 
